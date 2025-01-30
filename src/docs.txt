@@ -1,0 +1,2 @@
+1/30
+    need to have hover over img display a transparent camera icon and text to let user know that if they click it will upload an image for their profile
