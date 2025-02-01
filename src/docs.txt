@@ -1,2 +1,8 @@
 1/30
     need to have hover over img display a transparent camera icon and text to let user know that if they click it will upload an image for their profile
+
+1/31
+    need to set up rest of main container, and flesh out forms and get them ready to work with localstorage
+        possibly need to have a button or something to reset it. pretty much going to use the localstorage info to process and use with the mock email
+            set up mock email process
+                really make page pop with round borders and fruitger aero
