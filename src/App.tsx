@@ -11,8 +11,9 @@ function App() {
     firstName: String;
     lastName: String;
     email: String;
-    number: Number;
+    number: String;
     wantsUpdates: boolean;
+    questionsConcerns: String;
 
   }
 
@@ -21,13 +22,14 @@ function App() {
     firstName: '',
     lastName: '',
     email: '',
-    number: 5555555555,
-    wantsUpdates: false
+    number: '5555555555',
+    wantsUpdates: false,
+    questionsConcerns: ''
 
   })
 
   // function to trigger setUserData on each userInput
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
 
     setUserData((prevData) => ({
 
@@ -40,14 +42,20 @@ function App() {
 
   function handleCheckboxChange(event: React.ChangeEvent<HTMLInputElement>) {
 
-    const { name, checked } = event.target
+    
 
     setUserData((prevData) => ({
 
       ...prevData,
-      [name]: checked
+      [event.target.name]: event.target.checked
 
     }))
+
+  }
+
+  function checkInfoButton() {
+    console.log('on click event is firing')
+    console.log(userData)
 
   }
 
@@ -82,7 +90,8 @@ function App() {
         formDone={formDone} 
         handleChange={handleChange} 
         handleCheckboxChange={handleCheckboxChange}
-        userData={userData}
+        userData={userData} 
+        checkInfoButton={checkInfoButton}
       />
     </div>
   )

@@ -10,4 +10,5 @@
 2/1 
     work to make button be disabled until all info is given. questions and concerns are optional
         css mostly fine now, work on functionality for inputs and such.
+            worked on most of the functionality, just need to work on the image uploader(locally) and possibly a backend way to send an email to the user after they have signed up. (using node.js and express.js)
             
