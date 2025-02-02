@@ -10,8 +10,117 @@
   height: 100px;
 }
 
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .checkbox-label {
-  margin-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  max-width: 30%;
+  margin-top: 20px;
+  
+}
+
+.btn-primary:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.main-container-top {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.top-left {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 30px;
+
+}
+
+.main-container-bottom {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+
+}
+
+#suggestions-input {
+  width: 100% !important;
+  height: 100px !important;
+  margin-top: 10px;
+}
+
+/* #first-name-input {
+
+} */
+
+
+
+.input-form {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+/* .input-form label {
+  text-align: left;
+} */
+
+.input-form input {
+
+  border: none;
+  border-radius: 20px;
+
+}
+
+.input-group label {
+  padding-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {

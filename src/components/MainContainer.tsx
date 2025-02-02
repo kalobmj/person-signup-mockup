@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react'
-// get bootstrap
 
 interface MainContainerProps {
     formDone: Number;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    userData: {
+        firstName: String;
+        lastName: String;
+        email: String;
+        number: Number;
+        wantsUpdates: boolean;
+    };
 }
 
 // formDone keeps track of user input
 
-export default function MainContainer({ formDone }: MainContainerProps) {
+export default function MainContainer({ formDone, handleChange, handleCheckboxChange, userData }: MainContainerProps) {
 
     // let name: string = 'Kalob'
     // let age: number = 27
@@ -29,16 +37,19 @@ export default function MainContainer({ formDone }: MainContainerProps) {
 
                     <div className='checkbox-container'>
 
+                        <input
+                            type='checkbox'
+                            id='flexcheckdefault'
+                            className='form-check-input' 
+                            checked={userData.wantsUpdates} 
+                            onChange={handleCheckboxChange}
+                        />
                         <label
                             htmlFor='checkbox'
                             className='checkbox-label'
                         >
                             Click to receive extra updates and info about special promotions
                         </label>
-                        <input
-                            type='checkbox'
-                            id='checkbox'
-                        />
 
                     </div>
 
@@ -48,52 +59,61 @@ export default function MainContainer({ formDone }: MainContainerProps) {
                     {/* take data from obj and map over to create text inputs */}
                     {/* might need to flesh out different forms */}
 
-                    <form action="">
-                        <label
-                            className='first-name-label'
-                            htmlFor='first-name-input'
-                        >
-                            first name:
-                        </label>
-                        <input
-                            type='text'
-                            id='first-name-input' 
-                            placeholder='First Name'
-                        />
-                        <label
-                            className='last-name-label'
-                            htmlFor='last-name-input'
-                        >
-                            last name:
-                        </label>
-                        <input
-                            type='text'
-                            id='last-name-input' 
-                            placeholder='Last Name'
-                        />
-                        <label
-                            className='email-label'
-                            htmlFor='email-input'
-                        >
-                            email:
-                        </label>
-                        <input
-                            type='email'
-                            id='email-input' 
-                            placeholder='example@place.com'
-                        />
-                        <label
-                            className='phone-number-label'
-                            htmlFor='phone-number-input'
-                        >
-                            phone:
-                        </label>
-                        <input
-                            // possibly have a custom format (xxx) xxx xxxx
-                            type='number'
-                            id='phone-number-input' 
-                            placeholder='(xxx) xxx xxxx' 
-                        />
+                    <form action="" className='input-form'>
+                        <div className='input-group'>
+                            <label
+                                className='first-name-label'
+                                htmlFor='first-name-input' 
+                            >
+                                first name:
+                            </label>
+                            <input
+                                type='text'
+                                id='first-name-input'
+                                placeholder='John' 
+                                
+                            />
+                        </div>
+                        <div className='input-group'>
+                            <label
+                                className='last-name-label'
+                                htmlFor='last-name-input'
+                            >
+                                last name:
+                            </label>
+                            <input
+                                type='text'
+                                id='last-name-input'
+                                placeholder='Smith'
+                            />
+                        </div>
+                        <div className='input-group'>
+                            <label
+                                className='email-label'
+                                htmlFor='email-input'
+                            >
+                                email:
+                            </label>
+                            <input
+                                type='email'
+                                id='email-input'
+                                placeholder='example@place.com'
+                            />
+                        </div>
+                        <div className='input-group'>
+                            <label
+                                className='phone-number-label'
+                                htmlFor='phone-number-input'
+                            >
+                                phone:
+                            </label>
+                            <input
+                                // possibly have a custom format (xxx) xxx xxxx
+                                type='number'
+                                id='phone-number-input'
+                                placeholder='(xxx) xxx xxxx'
+                            />
+                        </div>
                     </form>
 
                 </div>
@@ -101,10 +121,29 @@ export default function MainContainer({ formDone }: MainContainerProps) {
             </div>
             <div className='main-container-bottom'>
 
-                <h3>suggestions or concerns</h3>
+                <label 
+                    htmlFor='suggestions-input'
+                >
+                    suggestions or concerns:
+                </label>
                 {/* text input form here */}
 
+                <textarea
+                    id='suggestions-input'
+                    className='form-control text-area'
+                >
+                </textarea>
+
             </div>
+            <div className='btn-container'>
+            <button 
+                className='btn btn-primary'
+            >
+                submit info !
+            </button>
+
+            </div>
+
         </div>
     )
 }
